@@ -13,6 +13,7 @@ const RQSuperHeroes = (): React.JSX.Element => {
     queryKey: ["super-heroes"],
     queryFn: fetchSuperHeroes,
     // -> https://tanstack.com/query/latest/docs/react/guides/important-defaults
+    // More: https://tanstack.com/query/v5/docs/react/guides/window-focus-refetching
     // if 'refetchOnMount' set to true then react query will refetch the data on component mount if the data is 'stale', by default it is true
     refetchOnMount: true,
     // if 'refetchOnMount' set to false then react query will not refetch the data on component mount if the data is 'stale'

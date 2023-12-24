@@ -1,2 +1,1 @@
--> Query Cache Example: https://youtu.be/2TX8ojaSwF0?list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2
 -> './src/pages/RQSuperHeroes.tsx'
