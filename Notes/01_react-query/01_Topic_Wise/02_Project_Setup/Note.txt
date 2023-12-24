@@ -2,3 +2,6 @@
     1. Create react app
     2. Setup an API endpoint that serves mock data for use of our application:
         -> https://www.npmjs.com/package/json-server
+    3. setup a react router and a few routes in the application
+    4. fetch data the traditional way using useEffect and useState:
+        -> './src/pages/SuperHeroes.tsx'
