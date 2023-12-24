@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
 import SuperHero from "../interface/Superheroes";
 
 const RQSuperHeroes = (): React.JSX.Element => {
-  // https://tanstack.com/query/v5/docs/react/quick-start
+  // https://tanstack.com/query/latest/docs/react/guides/queries
   // Function that do http request to our server and return the promise from this function
   const fetchSuperHeroes = (): Promise<AxiosResponse<SuperHero[]>> => {
     return axios.get("http://localhost:4000/superheroess");
