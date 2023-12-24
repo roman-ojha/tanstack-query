@@ -22,10 +22,11 @@ const SuperHeroes = () => {
       .get("http://localhost:4000/superheroess")
       .then((res) => {
         setData(res.data);
-        setIsLoading(false);
       })
       .catch((err) => {
         setError((err as AxiosError).message);
+      })
+      .finally(() => {
         setIsLoading(false);
       });
 
