@@ -15,8 +15,6 @@ const fetchCoursesByChannelId = (
   return axios.get(`http://localhost:4000/channels/${channelId}`);
 };
 
-// -> As we know that parallel queries can executed in parallel to maximize fetching concurrency.
-// -> But in some cases where we need to execute queries sequentially, that is one after the another. this comes when one query is dependent of another query.
 const DependentQueries = ({ email }: { email: string }): React.JSX.Element => {
   // In this page we need to fetch list of courses for the email that is provided on 'email' props
   // First we need to fetch user detail using 'email' and then get the 'channelId' from that
