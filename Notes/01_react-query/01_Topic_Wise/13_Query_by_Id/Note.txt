@@ -1,0 +1,5 @@
+*) Steps:
+    1. Create a new page that will eventually display the details about one single super hero.
+    2. Configure the route to that page and add a lik from the super heroes list page to the super hero details page.
+    3. Fetch a superhero by id and display the details in the UI.
+-> './src/hooks/useSuperHeroData.ts', './src/pages/RQSuperHero.tsx', './src/main.tsx'
