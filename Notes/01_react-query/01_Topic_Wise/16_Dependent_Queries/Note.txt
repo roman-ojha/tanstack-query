@@ -1,0 +1,4 @@
+-> As we know that parallel queries can executed in parallel to maximize fetching concurrency.
+-> But in some cases where we need to execute queries sequentially, that is one after the another. this comes when one query is dependent of another query.
+-> https://tanstack.com/query/v5/docs/react/guides/dependent-queries
+-> './src/pages/DynamicParallel.tsx', './src/main.tsx'
