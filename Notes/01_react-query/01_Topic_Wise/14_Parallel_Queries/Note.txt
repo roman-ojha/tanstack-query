@@ -1,0 +1,3 @@
+-> Sometimes single components needs to call multiple apis to fetch a necessary data.
+-> https://tanstack.com/query/v5/docs/react/guides/parallel-queries
+-> './src/pages/ParallelQueries.tsx', './src/main.tsx'
