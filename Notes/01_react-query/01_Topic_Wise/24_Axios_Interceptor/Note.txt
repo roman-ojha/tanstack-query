@@ -1,0 +1,2 @@
+-> https://tanstack.com/query/v5/docs/react/guides/updates-from-mutation-responses
+-> './src/pages/RQSuperHeroes.tsx'
