@@ -20,11 +20,9 @@ const RQSuperHeroes = (): React.JSX.Element => {
   const { isLoading, data, error, isError, isFetching, refetch } =
     useSuperHeroesData();
 
-  // https://tanstack.com/query/v5/docs/react/guides/query-invalidation
-  // At the moment when we will add, we have to manually refetch the new list of heros by calling 'refetch' function
-  // Especially when you know for a fact that a query's data is out of data because of something the user have done.
-  // So, rather why don't we tell react query to automatically refetch the superheros query as soon as the mutation succeed
-  // for that  the 'QueryClient' has an 'invalidateQueries' method that lets you intelligently mark queries as stale and potentially refetch them too!
+  // So, whenever we are adding new super hero to the database by request to api it will response us with the add data
+  // So, Instead of refetching the query to get list of superheros, because we are just wasting the network call, we already have the added data available on response body.
+  // So, we can update the query done to fetch list of super heroes and add the new data to the existing query.
   const queryClient = useQueryClient();
   const { mutate: addSuperHeroMutate } = useMutation<
     AxiosResponse<SuperHero>,
@@ -34,12 +32,25 @@ const RQSuperHeroes = (): React.JSX.Element => {
     mutationKey: ["add-super-heros"],
     mutationFn: addSuperHero,
     onSuccess(data, variables, context) {
-      // https://tanstack.com/query/v5/docs/react/guides/invalidations-from-mutations
-      // so whenever the mutation become success we will going to call 'invalidateQueries' for the specific query key which we want to invalidate
-      queryClient.invalidateQueries({
-        queryKey: ["super-heroes"],
-      });
-      // After this react query will refetch the query on background and update the data on UI
+      // 'data' refers to the response data that api send us.
+      // Now add a new data on existing query query
+      // https://tanstack.com/query/v5/docs/react/guides/updates-from-mutation-responses
+      // 'setQueryData(<key>,<data>)' use to update the query cache
+      queryClient.setQueryData(
+        ["super-heroes"],
+        (oldQueryData: {
+          data: SuperHero[];
+          status: number;
+          statusText: string;
+        }) => {
+          // 'oldQueryData' refers to what is present on the query cache
+          console.log(oldQueryData);
+          return {
+            ...oldQueryData,
+            data: [...oldQueryData.data, data.data],
+          };
+        }
+      );
     },
   });
 

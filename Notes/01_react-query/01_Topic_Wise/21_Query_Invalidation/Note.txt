@@ -1,2 +1,3 @@
 -> https://tanstack.com/query/v5/docs/react/guides/query-invalidation
+-> https://tanstack.com/query/v5/docs/react/guides/invalidations-from-mutations
 -> './src/pages/RQSuperHeroes.tsx'
