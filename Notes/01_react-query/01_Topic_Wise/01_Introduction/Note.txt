@@ -1,0 +1,2 @@
+-> Blogs: https://tanstack.com/query/latest/docs/react/community/tkdodos-blog
+-> Practical React Query: https://tkdodo.eu/blog/practical-react-query
